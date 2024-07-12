@@ -1,10 +1,27 @@
-# 참여 인원
+# Web Yacht Dice Game Server
 
-[김현우](https://github.com/qualificationalitated)
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://avatars.githubusercontent.com/u/175118253?s=400&u=803954961ff2170fd8b61dabe3079008d21b56db&v=4" width="240" alt="Web Yacht Dice" /></a>
+</p>
+
+## Description
+
+> __🎲 Yahtzee dice, on web__
+
+웹 기반 동작 Yacht Dice 게임의 서버를 제작합니다.
+
+## 참여 인원
+
+|<p align="center"><a href="https://github.com/qualificationalitated" target="blank"><img src="https://avatars.githubusercontent.com/u/49204934?v=4" width="100" alt="Web Yacht Dice" /></a></p>|
+|:-:|
+|[김현우](https://github.com/qualificationalitated)|
 
 ## 개발환경 설정
 
-언어 : Kotlin 11 / Java 17
+|||
+|-|-|
+|언어|Typescript 5.5.3|
+|프레임워크|node.js(20.15.1) <br> nest.js(10.4.2)|
 
 ## 개발 규칙
 
@@ -49,3 +66,7 @@ Header, Body, Footer는 빈 행으로 구분.
 | refactor | 코드 리팩토링에 대한 커밋 |
 | test | 테스트 코드 수정에 대한 커밋 |
 | perf | 성능 개선에 대한 커밋 |
+
+## License
+
+본 프로젝트는 [MIT license](LICENSE.txt)를 따릅니다.
