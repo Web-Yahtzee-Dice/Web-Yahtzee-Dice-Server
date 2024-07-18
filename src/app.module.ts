@@ -16,7 +16,7 @@ import { KnexModule } from 'nest-knexjs';
           version: '8.3',
           useNullAsDefault: true,
           connection: {
-            database: process.env.db_name,
+            database: process.env.USER_NAME,
             user: process.env.db_user,
             password: process.env.db_pass,
             host: process.env.db_host,
