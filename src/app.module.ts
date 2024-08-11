@@ -3,6 +3,12 @@ import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { AppService } from './app.service';
 import { KnexModule } from 'nest-knexjs';
+import { UsersModule } from './users/users.module';
+import { GamesModule } from './games/games.module';
+import { RoundsModule } from './rounds/rounds.module';
+import { RollsModule } from './rolls/rolls.module';
+import { DicesModule } from './dices/dices.module';
+import { ScoresModule } from './scores/scores.module';
 
 @Module({
   imports: [
@@ -26,6 +32,12 @@ import { KnexModule } from 'nest-knexjs';
         },
       }),
     }),
+    UsersModule,
+    GamesModule,
+    RoundsModule,
+    RollsModule,
+    DicesModule,
+    ScoresModule,
   ],
   controllers: [AppController],
   providers: [AppService],
