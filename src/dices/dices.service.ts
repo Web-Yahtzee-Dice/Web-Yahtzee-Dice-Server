@@ -20,7 +20,4 @@ export class DicesService {
     return `This action updates a #${id} dice`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} dice`;
-  }
 }

@@ -20,7 +20,4 @@ export class ScoresService {
     return `This action updates a #${id} score`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} score`;
-  }
 }
