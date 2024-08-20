@@ -27,8 +27,5 @@ export class RollsController {
     return this.rollsService.update(+id, updateRollDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.rollsService.remove(+id);
-  }
+
 }

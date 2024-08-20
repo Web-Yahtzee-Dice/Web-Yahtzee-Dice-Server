@@ -20,7 +20,4 @@ export class RoundsService {
     return `This action updates a #${id} round`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} round`;
-  }
 }

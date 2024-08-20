@@ -20,7 +20,4 @@ export class GamesService {
     return `This action updates a #${id} game`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} game`;
-  }
 }

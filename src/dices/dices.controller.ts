@@ -27,8 +27,4 @@ export class DicesController {
     return this.dicesService.update(+id, updateDiceDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.dicesService.remove(+id);
-  }
 }

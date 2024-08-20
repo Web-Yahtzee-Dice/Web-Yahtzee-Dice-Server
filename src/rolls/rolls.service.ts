@@ -20,7 +20,4 @@ export class RollsService {
     return `This action updates a #${id} roll`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} roll`;
-  }
 }

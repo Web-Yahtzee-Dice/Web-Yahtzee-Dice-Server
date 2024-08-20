@@ -27,8 +27,4 @@ export class GamesController {
     return this.gamesService.update(+id, updateGameDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.gamesService.remove(+id);
-  }
 }

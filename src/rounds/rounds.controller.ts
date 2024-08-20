@@ -27,8 +27,5 @@ export class RoundsController {
     return this.roundsService.update(+id, updateRoundDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.roundsService.remove(+id);
-  }
+
 }
