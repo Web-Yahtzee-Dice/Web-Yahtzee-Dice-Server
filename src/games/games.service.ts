@@ -55,9 +55,9 @@ export class GamesService {
       }
       return game;
     } catch(error){
-      console.error('Failed to find game with ID:', error);
+      console.error('Internal Server Error:', error);
       throw new HttpException(
-        {message:'Failed to find game with ID'},
+        {message:'Internal Server Error'},
         HttpStatus.INTERNAL_SERVER_ERROR
       );
     }
