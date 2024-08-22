@@ -24,19 +24,23 @@ export class GamesController {
     }
   }
 
-  @Get()
-  findAll() {
-    return this.gamesService.findAll();
+  @Get('search')
+  async findAll() {
+    const games = await this.gamesService.findAllGames();
+    return games;
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.gamesService.findOne(+id);
+  @Get('search/:id')
+  async findGameById(@Param('id') id: string) {
+    // 문자열로 받아, + 붙여서 숫자로 변환
+    const game = await this.gamesService.findGameById(id);
+    return game;
+    
   }
 
-  @Patch(':id')
+  @Patch('update/:id')
   update(@Param('id') id: string, @Body() updateGameDto: UpdateGameDto) {
-    return this.gamesService.update(+id, updateGameDto);
+    return this.gamesService.updateGame(+id, updateGameDto);
   }
 
 }
