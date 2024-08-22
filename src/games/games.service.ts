@@ -18,11 +18,12 @@ export class GamesService {
     try{
       const [game_id] = await db('games')
         .insert(newGame)
-        
         return game_id;
     } catch(error){
-      console.log('Error Create Game:',error);
-      throw new Error('Cannot Make Game')
+      throw new HttpException(
+        { message:'Internal Server Error' }, 
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 

@@ -9,19 +9,8 @@ export class GamesController {
 
   @Post('create')
   async createGame(/*@Body() createGameDto: CreateGameDto*/) {
-    try{
-      const game_id = await this.gamesService.createGame(/*createGameDto*/)
-      return {ID : game_id};
-    }catch(error){
-      if(error.message === 'Cannot Make Game'){
-        throw new HttpException(
-          { message:'Cannot Create Game' }, HttpStatus.BAD_REQUEST,
-        );
-      }
-      throw new HttpException(
-        { message:'Internal Server Error' }, HttpStatus.INTERNAL_SERVER_ERROR,
-      )
-    }
+    const game_id = await this.gamesService.createGame(/*createGameDto*/)
+    return {ID : game_id};
   }
 
   @Get('search')
