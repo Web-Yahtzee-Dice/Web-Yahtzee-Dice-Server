@@ -2,6 +2,8 @@ import { BadRequestException, HttpCode, HttpException, HttpStatus, Injectable, N
 import { Game } from './models/game.model';
 import { db } from 'database';
 import { CreateGameResponseDto } from './dto/create-game-response.dto';
+import { FindGameResponseDto } from './dto/find-game-response.dto';
+
 
 @Injectable()
 export class GamesService {
@@ -23,7 +25,7 @@ export class GamesService {
   async findAllGames() {
 
     const games = await db('games').select('*');
-    return games;
+    return games.map(game => new FindGameResponseDto(game))
   }
 
   async findGameById(id: string) {
@@ -41,7 +43,7 @@ export class GamesService {
       console.error(`Game with ID ${numericId} not found`);
       throw new NotFoundException(`Game with ID ${numericId} not found`);
     }
-    return game;
+    return new FindGameResponseDto(game);
 
   }
 

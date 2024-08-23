@@ -21,8 +21,7 @@ export class GamesController {
   async findGameById(@Param('id') id: string) {
     // 문자열로 받아, + 붙여서 숫자로 변환
     const game = await this.gamesService.findGameById(id);
-    return game;
-    
+    return game; 
   }
 
 }
