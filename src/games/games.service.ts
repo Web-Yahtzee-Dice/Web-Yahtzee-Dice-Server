@@ -1,12 +1,11 @@
 import { BadRequestException, HttpCode, HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
-import { CreateGameDto } from './dto/create-game.dto';
-import { UpdateGameDto } from './dto/update-game.dto';
 import { Game } from './models/game.model';
 import { db } from 'database';
+import { CreateGameResponseDto } from './dto/create-game-response.dto';
 
 @Injectable()
 export class GamesService {
-  async createGame(/*createGameDto: CreateGameDto*/) {
+  async createGame() {
     // 생성할 임의 게임 엔티티를 설정, ID는 데이터베이스에서 만들어주니 속성 제거
     const newGame: Omit<Game, 'game_id'> = {
       game_winner_id: null,
@@ -16,7 +15,9 @@ export class GamesService {
     }
     const [game_id] = await db('games')
       .insert(newGame)
-    return game_id;
+    return new CreateGameResponseDto({
+      id:game_id
+    });
   }
 
   async findAllGames() {
@@ -42,10 +43,6 @@ export class GamesService {
     }
     return game;
 
-  }
-
-  updateGame(id: number, updateGameDto: UpdateGameDto) {
-    return `This action updates a #${id} game`;
   }
 
 }

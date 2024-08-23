@@ -1,7 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, HttpException, HttpStatus } from '@nestjs/common';
 import { GamesService } from './games.service';
-import { CreateGameDto } from './dto/create-game.dto';
-import { UpdateGameDto } from './dto/update-game.dto';
 
 @Controller('games')
 export class GamesController {
@@ -25,11 +23,6 @@ export class GamesController {
     const game = await this.gamesService.findGameById(id);
     return game;
     
-  }
-
-  @Patch('update/:id')
-  update(@Param('id') id: string, @Body() updateGameDto: UpdateGameDto) {
-    return this.gamesService.updateGame(+id, updateGameDto);
   }
 
 }
