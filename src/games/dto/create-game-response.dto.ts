@@ -3,9 +3,9 @@ import {  IsNumber } from 'class-validator';
 
 export class CreateGameResponseDto { 
     @IsNumber()
-    id:number;
+    game_id:number;
 
     constructor(data:{id:number}){
-        this.id = data.id;
+        this.game_id = data.id;
     }
 }

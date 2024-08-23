@@ -8,7 +8,7 @@ export class GamesController {
   @Post('create')
   async createGame(/*@Body() createGameDto: CreateGameDto*/) {
     const game_id = await this.gamesService.createGame(/*createGameDto*/)
-    return {ID : game_id};
+    return game_id;
   }
 
   @Get('search')
