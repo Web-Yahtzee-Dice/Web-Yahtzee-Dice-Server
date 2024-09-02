@@ -2,8 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ScoresService } from './scores.service';
 import { CreateScoreDto } from './dto/create-score.dto';
 import { UpdateScoreDto } from './dto/update-score.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('scores')
+@ApiTags('Scores API')
 export class ScoresController {
   constructor(private readonly scoresService: ScoresService) {}
 
