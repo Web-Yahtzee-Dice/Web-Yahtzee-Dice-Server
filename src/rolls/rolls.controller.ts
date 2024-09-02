@@ -2,8 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { RollsService } from './rolls.service';
 import { CreateRollDto } from './dto/create-roll.dto';
 import { UpdateRollDto } from './dto/update-roll.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('rolls')
+@ApiTags('Rolls API')
 export class RollsController {
   constructor(private readonly rollsService: RollsService) {}
 

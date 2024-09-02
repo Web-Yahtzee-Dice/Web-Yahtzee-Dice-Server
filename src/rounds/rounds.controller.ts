@@ -2,8 +2,10 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { RoundsService } from './rounds.service';
 import { CreateRoundDto } from './dto/create-round.dto';
 import { UpdateRoundDto } from './dto/update-round.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('rounds')
+@ApiTags('Rounds API')
 export class RoundsController {
   constructor(private readonly roundsService: RoundsService) {}
 

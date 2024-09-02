@@ -11,6 +11,7 @@ async function bootstrap() {
     .setTitle('Web Yahtzee Dice')
     .setDescription('Web Yahtzee Dice API description')
     .setVersion('1.0')
+    .addServer('http://localhost:3000/', 'Local environment')
     .build();
   const document = SwaggerModule.createDocument(app,config);
   SwaggerModule.setup('api',app,document);
